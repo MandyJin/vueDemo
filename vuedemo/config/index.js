@@ -9,16 +9,18 @@ const arrProxy = [
   '/userinfo',
   '/tablelist'
 ];
+/*
 let proxy = {};
 arrProxy.forEach((item,i) => {
   proxy[item] = {
     changeOrigin: true,
-    target: ' https://www.easy-mock.com/mock/5abce6f0d3f10a76f2e720e1',
+    target: ' https://www.easy-mock.com/mock/5ac045885647e2483fcc2bf3/demo',
     secure: false,
     pathRewrite: {}
   }
   proxy[item].pathRewrite[item] = '/myvue' + item
 })
+*/
 
 module.exports = {
   dev: {
@@ -26,16 +28,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: proxy,
-    // proxyTable: {
-    //     '/proxy': {
-    //         target: 'https://www.easy-mock.com/mock/5a9f49ae6080a32617c73596',
-    //         secure: false,
-    //         pathRewrite: {
-    //             '/proxy': '/example/proxy'
-    //         }
-    //     }
-    // },
+    //proxyTable: proxy,
+    proxyTable: {
+        '/userInfo': {
+            target: 'https://www.easy-mock.com/mock/5ac045885647e2483fcc2bf3/',
+            secure: false,
+            pathRewrite: {
+                '/userInfo': '/demo/userInfo'
+            }
+        }
+    },
 
 
     // Various Dev Server settings

@@ -27,7 +27,7 @@
       }
     },
     mounted(){
-
+      this.$store.dispatch("getuserInfo")
     },
     methods:{
 

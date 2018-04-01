@@ -7,10 +7,15 @@ import "./assets/main.less"
 
 Vue.config.productionTip = false
 
+import store from "./vuex/index"
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
+
